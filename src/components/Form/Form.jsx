@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import s from './Form.module.css';
+import PropTypes from 'prop-types';
 
 const INITIAL_STATE = {
   name: '',
@@ -8,7 +9,9 @@ const INITIAL_STATE = {
 
 class Form extends Component {
   state = { ...INITIAL_STATE };
-
+  static propTypes = {
+    addContact: PropTypes.func.isRequired,
+  };
   reset = () => this.setState(INITIAL_STATE);
 
   onSubmit = e => {
